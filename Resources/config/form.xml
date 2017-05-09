@@ -14,11 +14,16 @@
 
     <parameters>
         <parameter key="bruery_core.form.type.file.class">Bruery\CoreBundle\Form\Type\FileType</parameter>
+        <parameter key="bruery_core.form.type.slider.class">Bruery\CoreBundle\Form\Type\SliderType</parameter>
     </parameters>
+
 
     <services>
         <service id="bruery_core.form.type.file" class="%bruery_core.form.type.file.class%">
             <tag name="form.type_extension" alias="file" />
+        </service>
+        <service id="bruery_core.form.type.slider" class="%bruery_core.form.type.slider.class%">
+            <tag name="form.type" alias="bruery_slider"/>
         </service>
     </services>
 </container>

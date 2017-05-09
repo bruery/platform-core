@@ -28,3 +28,31 @@
 	{% endif %}
 {% endspaceless %}
 {% endblock file_widget %}
+
+{% block bruery_slider_widget %}
+    {% spaceless %}
+		<div class="slider-outer-container">
+		<input type="text"
+			   class="slider form-control"
+			   data-slider-handle="{{ configs.handle }}"
+			   data-slider-min="{{ configs.min }}"
+			   data-slider-max="{{ configs.max }}"
+			   data-slider-step="{{ configs.step }}"
+			   data-slider-value="[{{ configs.sliderValue }}]"
+			   data-slider-orientation="{{ configs.orientation }}"
+			   data-slider-selection="{{ configs.selection }}"
+			   data-slider-tooltip="show"
+			   {% if configs.ticks %}
+			   data-slider-ticks="[{{ configs.ticks }}]"
+			   		{% if configs.ticksLabels %}
+				   data-slider-ticks-labels='[{{ configs.ticksLabels }}]'
+                    {% endif %}
+                   {% if configs.ticksSnapBounds %}
+					   data-slider-ticks-snap-bounds="{{ configs.ticksSnapBounds }}"
+                   {% endif %}
+			   {% endif %}
+			   data-slider-id="{{ configs.sliderSelectionColor }}"
+                {{ block('widget_attributes') }}>
+		</div>
+    {% endspaceless %}
+{% endblock bruery_slider_widget %}
