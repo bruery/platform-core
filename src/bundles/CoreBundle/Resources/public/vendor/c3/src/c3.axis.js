@@ -1,12 +1,3 @@
-/*
- * This file is part of the Bruery Platform.
- *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
- *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
- */
-
 // Features:
 // 1. category axis
 // 2. ceil values of translate/x/y to int for half pixel antialiasing

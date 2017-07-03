@@ -1,10 +1,10 @@
 /*
- * This file is part of the Bruery Platform.
+ * This file is part of the Mosaic Platform.
  *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
+ * (c) Rommel M. Zamora <rommel.zamora@groupm.com>
+ * (c) Andrew Aculana <andrew.aculana@movent.com>
  *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+ * Copyright (c)  2017. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
  */
 
 jQuery(document).ready(function() {
@@ -35,8 +35,9 @@ jQuery(document).ready(function() {
     });
 });
 
-jQuery(document).on('fetch-data', function(e) {
-    CoreAjax.fetch_data(e.target);
+jQuery(document).on('core-ajax-fetch-data', function(e) {
+    CoreAjax.log('[CoreAjax|event|fetchData|trigger] on', e);
+    CoreAjax.fetchData(e.target);
 });
 
 var CoreAjax = {
@@ -49,10 +50,11 @@ var CoreAjax = {
      * @param mixed
      */
     init: function(subject) {
-        if (jQuery('.load-more-btn', subject).length > 0) {
-            jQuery(subject).on('click', '.load-more-btn', function(event) {
+        CoreAjax.log('[CoreAjax|init] on', subject);
+        if (jQuery('.core-ajax-btn', subject).length > 0) {
+            jQuery(subject).on('click', '.core-ajax-trigger', function(event) {
                 CoreAjax.stopEvent(event);
-                jQuery(this).trigger('fetch-data');
+                jQuery(this).trigger('core-ajax-fetch-data');
             });
         }
     },
@@ -91,14 +93,12 @@ var CoreAjax = {
      * Change object field value
      * @param subject
      */
-    fetch_data: function(subject) {
-        CoreAjax.log('[CoreAjax|fetch_data] on', subject);
+    fetchData: function(subject) {
+        CoreAjax.log('[CoreAjax|fetchData] on', subject);
 
         var url = jQuery(subject).is('[data-href]') ? jQuery(subject).attr('data-href') : null;
         var targetClass = jQuery(subject).is('[data-target-class]') ? jQuery(subject).attr('data-target-class') : null;
         var targetId = jQuery(subject).is('[data-target-id]') ? jQuery(subject).attr('data-target-id') : null;
-        var loadMoreClass = jQuery(subject).is('[data-load-more-class]') ? jQuery(subject).attr('data-load-more-class') : null;
-        var loadMoreId = jQuery(subject).is('[data-load-more-id]') ? jQuery(subject).attr('data-load-more-id') : null;
 
         if(url !== null && (targetClass !== null || targetId !== null)) {
             jQuery.ajax({
@@ -115,12 +115,6 @@ var CoreAjax = {
                     jQuery('.'+targetClass).append(data.content);
                 } else if(targetId) {
                     jQuery('#'+targetId).append(data.content);
-                }
-
-                if(loadMoreClass) {
-                    jQuery('.'+loadMoreClass).html(data.loadMore);
-                } else if(loadMoreId) {
-                    jQuery('#'+loadMoreId).html(data.loadMore);
                 }
 
                 if(data.url !== null) {

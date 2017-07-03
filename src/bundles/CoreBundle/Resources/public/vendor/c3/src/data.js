@@ -1,12 +1,3 @@
-/*
- * This file is part of the Bruery Platform.
- *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
- *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
- */
-
 c3_chart_internal_fn.isX = function (key) {
     var $$ = this, config = $$.config;
     return (config.data_x && key === config.data_x) || (notEmpty(config.data_xs) && hasValue(config.data_xs, key));
