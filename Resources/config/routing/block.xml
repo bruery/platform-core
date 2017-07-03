@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  ~ This file is part of the Bruery Platform.
+  ~
+  ~ (c) Viktore Zara <viktore.zara@gmail.com>
+  ~ (c) Mell Zamora <mellzamora@outlook.com>
+  ~
+  ~ Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
+  -->
+
+<routes xmlns="http://symfony.com/schema/routing"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="bruery_block_ajax_action_render" pattern="/_block/render/{blockType}/{action}" methods="POST|GET">
+        <default key="_controller">BrueryBlockBundle:Block:render</default>
+        <requirement key="blockType">[a-zA-Z0-9_\-\.]+</requirement>
+        <requirement key="action">[a-z]+</requirement>
+    </route>
+
+    <route id="bruery_block_ajax_action_fetch_data" pattern="/_block/fetch-data/{blockType}/{action}" methods="POST|GET">
+        <default key="_controller">BrueryBlockBundle:Block:fetchData</default>
+        <requirement key="blockType">[a-zA-Z0-9_\-\.]+</requirement>
+        <requirement key="action">[a-zA-Z0-9]+</requirement>
+    </route>
+</routes>
