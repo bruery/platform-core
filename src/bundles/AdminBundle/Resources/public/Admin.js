@@ -17,24 +17,24 @@ jQuery(document).ready(function() {
     Admin.setup_collection_buttons(document);
     Admin.shared_setup(document);
 
-    jQuery(document).ajaxStart(function() {
-        jQuery.blockUI({ message: '<div class="load-container"><div class="loader">Loading...</div></div>',
-                         css: {
-                            border: 'none',
-                            padding: '0px',
-                            width:   'auto',
-                            left:     '50%',
-                            backgroundColor: 'transparent',
-                            '-webkit-border-radius': '10px',
-                            '-moz-border-radius': '10px',
-                            opacity:.4,
-                            color: '#fff'
-                         }});
-    });
-
-    jQuery(document).ajaxComplete(function(){
-        jQuery.unblockUI();
-    });
+    // jQuery(document).ajaxStart(function() {
+    //     jQuery.blockUI({ message: '<div class="load-container"><div class="loader">Loading...</div></div>',
+    //                      css: {
+    //                         border: 'none',
+    //                         padding: '0px',
+    //                         width:   'auto',
+    //                         left:     '50%',
+    //                         backgroundColor: 'transparent',
+    //                         '-webkit-border-radius': '10px',
+    //                         '-moz-border-radius': '10px',
+    //                         opacity:.4,
+    //                         color: '#fff'
+    //                      }});
+    // });
+    //
+    // jQuery(document).ajaxComplete(function(){
+    //     jQuery.unblockUI();
+    // });
 });
 
 jQuery(document).on('sonata-admin-append-form-element', function(e) {

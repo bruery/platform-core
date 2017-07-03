@@ -97,6 +97,11 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="search"]
     vertical-align: middle !important;
 }
 
+
+.tabdrop {
+    z-index: 99999 !important;
+}
+
 /*
  * Select2 Flat
  * ------------
@@ -590,7 +595,16 @@ table.bruery-table-orm > tbody > tr > td.control-group > input[type="text"] {
     margin: 0 3px;
 }
 
+.container-widget-tools {
+    margin-top: 10px;
+}
+
 @media (max-width: 767px) {
+
+    .select-responsive-widget-tools {
+        margin-top: 10px;
+        width: 100%;
+    }
 
     .bruery-table-action-button {
         text-align: center;
@@ -663,6 +677,12 @@ table.bruery-table-orm > tbody > tr > td.control-group > input[type="text"] {
 
 @media (min-width: 768px) and (max-width: 991px) {
 
+    .select-responsive-widget-tools {
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
     .bruery-table-action-button {
         text-align: center;
     }
@@ -703,6 +723,14 @@ table.bruery-table-orm > tbody > tr > td.control-group > input[type="text"] {
 
     .bruery-nav-stacked-item {
         width: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .select-responsive-widget-tools {
+        margin-top: 10px;
+        width: 100%;
     }
 }
 
