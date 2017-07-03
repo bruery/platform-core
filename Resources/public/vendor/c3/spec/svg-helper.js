@@ -1,12 +1,3 @@
-/*
- * This file is part of the Bruery Platform.
- *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
- *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
- */
-
 /**
  * Parse the d property of an SVG path into an array of drawing commands.
  * @param  {String} d SvgPath d attribute.]

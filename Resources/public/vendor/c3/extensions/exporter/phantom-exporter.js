@@ -1,12 +1,3 @@
-/*
- * This file is part of the Bruery Platform.
- *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
- *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
- */
-
 /**
 *  PNG\JPEG exporter for C3.js, version 0.2
 *  (c) 2014 Yuval Bar-On
@@ -19,7 +10,7 @@
 if (!String.prototype.format) {
   String.prototype.format = function() {
     var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) {
+    return this.replace(/{(\d+)}/g, function(match, number) { 
       return typeof args[number] != 'undefined'
         ? args[number]
         : match
@@ -72,7 +63,7 @@ if (system.args.length < 3 ) {
 			};
 		}
 	} else {
-		// check if size is defined in chart,
+		// check if size is defined in chart, 
 		// else apply defaults
 		page.viewportSize = {
 			height: (opts.size && opts.size.height) ? opts.size.height : 320,
@@ -83,7 +74,7 @@ if (system.args.length < 3 ) {
 
 page.onResourceRequested = function(requestData, request) {
   console.log('::loading resource ', requestData['url']);
-};
+};	
 
 // helpful debug functions
 page.onConsoleMessage = function(msg){
@@ -106,9 +97,9 @@ page.onError = function(msg, trace) {
 // render page
 function injectVerify(script) {
 	var req = page.injectJs(script);
-	if (!req) {
+	if (!req) { 
 		console.log( '\nError!\n' + script + ' not found!\n' );
-		phantom.exit(1);
+		phantom.exit(1); 
 	}
 }
 

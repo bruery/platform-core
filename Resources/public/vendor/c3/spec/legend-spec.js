@@ -1,12 +1,3 @@
-/*
- * This file is part of the Bruery Platform.
- *
- * (c) Viktore Zara <viktore.zara@gmail.com>
- * (c) Mell Zamorw <mellzamora@outlook.com>
- *
- * Copyright (c) 2016. For the full copyright and license information, please view the LICENSE  file that was distributed with this source code.
- */
-
 describe('c3 chart legend', function () {
     'use strict';
 
@@ -250,7 +241,7 @@ describe('c3 chart legend', function () {
         it('renders the legend item with the correct width and height', function () {
             d3.selectAll('.c3-legend-item-tile').each(function () {
                 expect(d3.select(this).style('stroke-width')).toBe(args.legend.item.tile.height + 'px');
-                var tileWidth = d3.select(this).attr('x2') - d3.select(this).attr('x1');
+                var tileWidth = d3.select(this).attr('x2') - d3.select(this).attr('x1'); 
                 expect(tileWidth).toBe(args.legend.item.tile.width);
             });
         });
@@ -276,7 +267,7 @@ describe('c3 chart legend', function () {
             d3.selectAll('.c3-legend-item-padded1 .c3-legend-item-tile, .c3-legend-item-padded2 .c3-legend-item-tile').each(function (el, index) {
                 var itemWidth = d3.select(this).node().parentNode.getBBox().width,
                     textBoxWidth = d3.select(d3.select(this).node().parentNode).select('text').node().getBBox().width,
-                    tileWidth = 15, // default value is 10, plus 5 more for padding
+                    tileWidth = 15, // default value is 10, plus 5 more for padding 
                     expectedWidth = textBoxWidth + tileWidth + (index ? 0 : 10) + args.legend.padding;
 
                 expect(itemWidth).toBe(expectedWidth);
