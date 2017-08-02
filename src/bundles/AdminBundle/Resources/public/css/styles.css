@@ -37,6 +37,10 @@ body > .header .logo {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.navbar-static-top {
+    z-index: 9999999;
+}
+
 .logo img {
     display: inline;
     padding-bottom: 4px;

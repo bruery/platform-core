@@ -23,7 +23,9 @@ jQuery(document).ready(function() {
                 '-moz-border-radius': '10px',
                 opacity:.4,
                 color: '#fff'
-            }});
+            },
+            baseZ: 999
+        });
     });
 
     jQuery(document).ajaxError(function(){

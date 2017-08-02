@@ -106,7 +106,7 @@
         {% endblock %}
         </title>
     </head>
-    <body {% block body_attributes %}class="sonata-bc hold-transition sidebar-mini{{ ' ' ~admin_pool.getOption('skin') }}{% if admin_pool.getOption('sidebar_collapse') %} sidebar-collapse{% endif %}"{% endblock %}>
+    <body {% block body_attributes %}class="sonata-bc hold-transition fixed sidebar-mini{{ ' ' ~admin_pool.getOption('skin') }}{% if admin_pool.getOption('sidebar_collapse') %} sidebar-collapse{% endif %}"{% endblock %}>
     <div class="wrapper">
 
         {% block sonata_header %}
