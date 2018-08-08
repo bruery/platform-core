@@ -106,7 +106,7 @@
         {% endblock %}
         </title>
     </head>
-    <body {% block body_attributes %}class="sonata-bc hold-transition sidebar-mini{{ ' ' ~admin_pool.getOption('skin') }}{% if admin_pool.getOption('sidebar_collapse') %} sidebar-collapse{% endif %}"{% endblock %}>
+    <body {% block body_attributes %}class="sonata-bc hold-transition fixed sidebar-mini{{ ' ' ~admin_pool.getOption('skin') }}{% if admin_pool.getOption('sidebar_collapse') %} sidebar-collapse{% endif %}"{% endblock %}>
     <div class="wrapper">
 
         {% block sonata_header %}
@@ -235,7 +235,7 @@
                                 {% endif %}
                             {% endblock side_bar_nav %}
                             {% block side_bar_after_nav %}
-                                <p class="bruery-powered text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href="{{ 'bruery_link'|trans({}, 'SonataAdminBundle') }}" rel="noreferrer" target="_blank">{{ 'bruery_powered_by'|trans({}, 'SonataAdminBundle') }} <b>{{ 'bruery_name'|trans({}, 'SonataAdminBundle') }}</b></a></p>
+                                {#<p class="bruery-powered text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href="{{ 'bruery_link'|trans({}, 'SonataAdminBundle') }}" rel="noreferrer" target="_blank">{{ 'bruery_powered_by'|trans({}, 'SonataAdminBundle') }} <b>{{ 'bruery_name'|trans({}, 'SonataAdminBundle') }}</b></a></p>#}
                             {% endblock %}
                         {% endblock sonata_side_nav %}
                     </section>
