@@ -15,7 +15,7 @@
   "minimum-stability": "dev",
   "require": {
 
-    "php": "^5.3 || ^7.0",
+    "php": "^7.2.0",
 
     "sonata-project/easy-extends-bundle": "~2.5",
     "sonata-project/intl-bundle": "~2.5",
@@ -31,7 +31,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "3.0.x-dev"
+      "dev-master": "3.x-dev"
     }
   }
 }
